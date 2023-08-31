@@ -12,18 +12,6 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  void displayDialog() {
-    Dialog(
-      child: Container(
-        height: 100,
-        width: 100,
-        decoration: const BoxDecoration(
-          color: Colors.grey,
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -93,33 +81,65 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Row(
                     children: [
-                      GridListView(),
+                      GridListView(
+                        icon: Icons.event,
+                        lgName: "Event\n",
+                        smName: "List of Event",
+                      ),
                       Gap(20),
-                      GridListView(),
+                      GridListView(
+                        icon: Icons.list,
+                        lgName: "Blogs\n",
+                        smName: "List of Blogs",
+                      ),
                     ],
                   ),
                   Gap(20),
                   Row(
                     children: [
-                      GridListView(),
+                      GridListView(
+                        icon: Icons.personal_injury,
+                        lgName: "Prayer\n",
+                        smName: "List of Event",
+                      ),
                       Gap(20),
-                      GridListView(),
+                      GridListView(
+                        icon: Icons.book_rounded,
+                        lgName: "Books\n",
+                        smName: "List of Books",
+                      ),
                     ],
                   ),
                   Gap(20),
                   Row(
                     children: [
-                      GridListView(),
+                      GridListView(
+                        icon: Icons.browse_gallery,
+                        lgName: "Gallery\n",
+                        smName: "List of Gallery",
+                      ),
                       Gap(20),
-                      GridListView(),
+                      // GridListView(
+                      //   icon: Icons.search,
+                      //   lgName: "Find a Church\n",
+                      //   smName: "Find the location of church",
+                      // ),
                     ],
                   ),
                   Gap(20),
                   Row(
                     children: [
-                      GridListView(),
+                      // GridListView(
+                      //   icon: Icons.event,
+                      //   lgName: "About\n",
+                      //   smName: "About the church",
+                      // ),
                       Gap(20),
-                      GridListView(),
+                      // GridListView(
+                      //   icon: Icons.email,
+                      //   lgName: "Contact\n",
+                      //   smName: "Manager a church",
+                      // ),
                     ],
                   ),
                 ],

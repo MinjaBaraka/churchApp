@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class GridListView extends StatelessWidget {
+  final IconData icon;
+  final String lgName;
+  final String smName;
   const GridListView({
     super.key,
+    required this.icon,
+    required this.lgName,
+    required this.smName,
   });
 
   @override
@@ -29,26 +35,31 @@ class GridListView extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Icon(
-                  Icons.event,
+                Icon(
+                  icon,
                   color: Colors.orangeAccent,
                 ),
                 const Gap(20),
                 Column(
                   children: [
                     RichText(
-                      textAlign: TextAlign.center,
-                      text: const TextSpan(
+                      // textAlign: TextAlign.center,
+                      text: TextSpan(
                         children: [
                           TextSpan(
-                            text: "Events\n",
-                            style: TextStyle(
+                            text: lgName,
+                            style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          TextSpan(text: "List of Events")
+                          TextSpan(
+                            text: smName,
+                            // style: TextStyle(
+                            //   overflow: TextOverflow.clip,
+                            // ),
+                          ),
                         ],
                       ),
                     ),
