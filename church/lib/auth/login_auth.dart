@@ -72,7 +72,8 @@ class _LoginAuthState extends State<LoginAuth> {
                     decoration: const InputDecoration(
                       hintText: "Email Address",
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderSide: BorderSide.none,
                       ),
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,
@@ -87,7 +88,8 @@ class _LoginAuthState extends State<LoginAuth> {
                         decoration: const InputDecoration(
                           hintText: "Password",
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderRadius: BorderRadius.all(Radius.circular(8)),
+                            borderSide: BorderSide.none,
                           ),
                           fillColor: Color.fromARGB(255, 212, 212, 212),
                           filled: true,

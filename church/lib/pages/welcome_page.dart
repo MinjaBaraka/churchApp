@@ -119,27 +119,27 @@ class _WelcomePageState extends State<WelcomePage> {
                         smName: "List of Gallery",
                       ),
                       Gap(20),
-                      // GridListView(
-                      //   icon: Icons.search,
-                      //   lgName: "Find a Church\n",
-                      //   smName: "Find the location of church",
-                      // ),
+                      GridListView(
+                        icon: Icons.search,
+                        lgName: "Find a Church\n",
+                        smName: "Find the location of church",
+                      ),
                     ],
                   ),
                   Gap(20),
                   Row(
                     children: [
-                      // GridListView(
-                      //   icon: Icons.event,
-                      //   lgName: "About\n",
-                      //   smName: "About the church",
-                      // ),
+                      GridListView(
+                        icon: Icons.event,
+                        lgName: "About\n",
+                        smName: "About the church",
+                      ),
                       Gap(20),
-                      // GridListView(
-                      //   icon: Icons.email,
-                      //   lgName: "Contact\n",
-                      //   smName: "Manager a church",
-                      // ),
+                      GridListView(
+                        icon: Icons.email,
+                        lgName: "Contact\n",
+                        smName: "Manager a church",
+                      ),
                     ],
                   ),
                 ],

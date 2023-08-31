@@ -122,10 +122,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     decoration: const InputDecoration(
                       hintText: "Enter Your Email Address",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                            color: Colors.orangeAccent,
-                          )),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderSide: BorderSide.none,
+                      ),
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,
                     ),

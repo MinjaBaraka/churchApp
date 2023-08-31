@@ -72,7 +72,8 @@ class _RegisterAuthState extends State<RegisterAuth> {
                     decoration: const InputDecoration(
                       hintText: "User Name",
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderSide: BorderSide.none,
                       ),
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,
@@ -85,10 +86,9 @@ class _RegisterAuthState extends State<RegisterAuth> {
                     decoration: const InputDecoration(
                       hintText: "Email Address",
                       border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(5)),
-                          borderSide: BorderSide(
-                            color: Colors.orangeAccent,
-                          )),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderSide: BorderSide.none,
+                      ),
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,
                     ),
@@ -100,7 +100,8 @@ class _RegisterAuthState extends State<RegisterAuth> {
                     decoration: const InputDecoration(
                       hintText: "Create Password",
                       border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderSide: BorderSide.none,
                       ),
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,

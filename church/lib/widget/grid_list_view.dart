@@ -40,30 +40,32 @@ class GridListView extends StatelessWidget {
                   color: Colors.orangeAccent,
                 ),
                 const Gap(20),
-                Column(
-                  children: [
-                    RichText(
-                      // textAlign: TextAlign.center,
-                      text: TextSpan(
-                        children: [
-                          TextSpan(
-                            text: lgName,
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
+                Expanded(
+                  child: Column(
+                    children: [
+                      RichText(
+                        // textAlign: TextAlign.center,
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: lgName,
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
-                          ),
-                          TextSpan(
-                            text: smName,
-                            // style: TextStyle(
-                            //   overflow: TextOverflow.clip,
-                            // ),
-                          ),
-                        ],
+                            TextSpan(
+                              text: smName,
+                              // style: TextStyle(
+                              //   overflow: TextOverflow.clip,
+                              // ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 )
               ],
             )
