@@ -69,6 +69,7 @@ class _LoginAuthState extends State<LoginAuth> {
                   const Gap(25),
                   TextFormField(
                     keyboardType: TextInputType.emailAddress,
+                    cursorColor: Colors.orangeAccent,
                     decoration: const InputDecoration(
                       hintText: "Email Address",
                       border: OutlineInputBorder(
@@ -84,6 +85,7 @@ class _LoginAuthState extends State<LoginAuth> {
                     children: [
                       TextFormField(
                         keyboardType: TextInputType.emailAddress,
+                        cursorColor: Colors.orangeAccent,
                         obscureText: true,
                         decoration: const InputDecoration(
                           hintText: "Password",

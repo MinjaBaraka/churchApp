@@ -106,6 +106,7 @@ class _RegisterAuthState extends State<RegisterAuth> {
                       fillColor: Color.fromARGB(255, 212, 212, 212),
                       filled: true,
                       suffixIcon: Icon(Icons.visibility),
+                      suffixIconColor: Colors.orangeAccent,
                     ),
                   ),
                   const Gap(10),
