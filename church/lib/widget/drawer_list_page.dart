@@ -1,8 +1,10 @@
+import 'package:church/model/upcoming_events.dart';
 import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../model/blogs_list.dart';
 import '../pages/blogs_page.dart';
 import 'drawer_terms_diver.dart';
 
@@ -65,7 +67,7 @@ class DrawerListPages extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WelcomePage(),
+                      builder: (context) => const WelcomePage(welcomeModel: []),
                     ));
               },
             ),
@@ -79,7 +81,8 @@ class DrawerListPages extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const EventsScreen(),
+                      builder: (context) => const EventsScreen(
+                          eventsUpcoming: EventsUpcoming.upcomingEvents),
                     ));
               },
             ),
@@ -107,10 +110,12 @@ class DrawerListPages extends StatelessWidget {
               icon: Icons.list_alt,
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const BlogsPage(),
-                    ));
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        BlogsPage(blogsList: BlogsList.blogsList),
+                  ),
+                );
               },
             ),
             const Gap(8),

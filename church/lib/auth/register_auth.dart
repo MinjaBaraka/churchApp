@@ -115,7 +115,8 @@ class _RegisterAuthState extends State<RegisterAuth> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const WelcomePage(),
+                          builder: (context) =>
+                              const WelcomePage(welcomeModel: []),
                         ),
                       );
                     },
