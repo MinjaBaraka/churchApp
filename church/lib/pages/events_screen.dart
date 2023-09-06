@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../widget/divider_container.dart';
+import '../widget/drawer_list_page.dart';
+import '../widget/tab_indicator_with_painter.dart';
 import '../widget/upcoming_events.dart';
 
 class EventsScreen extends StatefulWidget {
@@ -20,21 +21,26 @@ class _EventsScreenState extends State<EventsScreen>
     TabController tabController = TabController(length: 2, vsync: this);
     return SafeArea(
       child: Scaffold(
+        drawer: const DrawerListPages(),
         appBar: AppBar(
-          backgroundColor: Colors.black87,
-          leading: IconButton(
-            onPressed: () {},
-            icon: const Icon(
-              Icons.menu,
-            ),
-          ),
+          backgroundColor: Colors.orangeAccent,
           toolbarHeight: 100,
           elevation: 0.0,
-          title: const Text("Events"),
+          title: const Text(
+            "Events",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 25,
+            ),
+          ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.search),
+              icon: const Icon(
+                Icons.search,
+                color: Colors.black,
+                size: 30,
+              ),
             ),
           ],
         ),
@@ -66,10 +72,11 @@ class _EventsScreenState extends State<EventsScreen>
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                 child: TabBarView(
+                  physics: const NeverScrollableScrollPhysics(),
                   controller: tabController,
-                  children: const [
-                    Column(
-                      children: [
+                  children: [
+                    ListView(
+                      children: const [
                         UpcomingEvents(
                           dateEvents: "06 May",
                           timeEvents: "12:30 pm",
@@ -80,16 +87,25 @@ class _EventsScreenState extends State<EventsScreen>
                         ),
                         Gap(15),
                         UpcomingEvents(
-                          dateEvents: "06 May",
+                          dateEvents: "09 May",
                           timeEvents: "04:30 pm",
                           agedEvents: "18-50 age",
                           lgHeaderInfoEvents: "Leadership Summit 2018",
                           paragraphInfoEvents:
                               "In Flutter, creating such a layout can be done easily thanks to TabBar and TabBarView widgets.",
                         ),
+                        Gap(15),
+                        UpcomingEvents(
+                          dateEvents: "10 May",
+                          timeEvents: "10:00 pm",
+                          agedEvents: "20-above",
+                          lgHeaderInfoEvents: "Parents Guide for great life",
+                          paragraphInfoEvents:
+                              "In Flutter, creating such a layout can be done easily thanks to TabBar and TabBarView widgets.",
+                        ),
                       ],
                     ),
-                    Text("Baraka"),
+                    const Text("Baraka"),
                   ],
                 ),
               ),
@@ -98,32 +114,5 @@ class _EventsScreenState extends State<EventsScreen>
         ),
       ),
     );
-  }
-}
-
-class CircleTabIndicator extends Decoration {
-  final Color color;
-  double radius;
-  CircleTabIndicator({required this.color, required this.radius});
-  @override
-  BoxPainter createBoxPainter([VoidCallback? onChanged]) {
-    return _CirclePainter(color: color, radius: radius);
-  }
-}
-
-class _CirclePainter extends BoxPainter {
-  final Color color;
-  double radius;
-  _CirclePainter({required this.color, required this.radius});
-  @override
-  void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
-    Paint paint = Paint();
-    paint.color = color;
-    paint.isAntiAlias = true;
-
-    final Offset circleOffset = Offset(
-        configuration.size!.width / 2 - radius / 2,
-        configuration.size!.height - radius);
-    canvas.drawCircle(offset + circleOffset, radius, paint);
   }
 }

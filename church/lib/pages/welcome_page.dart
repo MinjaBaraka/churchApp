@@ -1,3 +1,4 @@
+import 'package:church/pages/blogs_page.dart';
 import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/personal_account.dart';
 import 'package:flutter/material.dart';
@@ -82,7 +83,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 children: [
                   Row(
                     children: [
-                      InkWell(
+                      GridListView(
                         onTap: () {
                           Navigator.push(
                             context,
@@ -91,15 +92,21 @@ class _WelcomePageState extends State<WelcomePage> {
                             ),
                           );
                         },
-                        child: const GridListView(
-                          icon: Icons.event,
-                          lgName: "Event\n",
-                          smName: "List of Event",
-                        ),
+                        icon: Icons.event,
+                        lgName: "Event\n",
+                        smName: "List of Event",
                       ),
                       const Gap(20),
-                      const GridListView(
-                        icon: Icons.list,
+                      GridListView(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const BlogsPage(),
+                            ),
+                          );
+                        },
+                        icon: Icons.list_alt,
                         lgName: "Blogs\n",
                         smName: "List of Blogs",
                       ),
@@ -109,13 +116,13 @@ class _WelcomePageState extends State<WelcomePage> {
                   const Row(
                     children: [
                       GridListView(
-                        icon: Icons.personal_injury,
+                        icon: Icons.hail_outlined,
                         lgName: "Prayer\n",
                         smName: "List of Event",
                       ),
                       Gap(20),
                       GridListView(
-                        icon: Icons.book_rounded,
+                        icon: Icons.book_outlined,
                         lgName: "Books\n",
                         smName: "List of Books",
                       ),
@@ -125,7 +132,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   const Row(
                     children: [
                       GridListView(
-                        icon: Icons.browse_gallery,
+                        icon: Icons.collections,
                         lgName: "Gallery\n",
                         smName: "List of Gallery",
                       ),
