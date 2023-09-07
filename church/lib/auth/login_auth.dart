@@ -1,3 +1,4 @@
+import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -122,7 +123,10 @@ class _LoginAuthState extends State<LoginAuth> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const WelcomePage(welcomeModel: []),
+                          builder: (context) =>
+                               WelcomePage(),
+                          // builder: (context) =>
+                          //     const EventsScreen(eventsUpcoming: []),
                         ),
                       );
                     },

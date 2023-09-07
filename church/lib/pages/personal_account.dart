@@ -1,5 +1,4 @@
 import 'package:church/auth/login_auth.dart';
-import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -68,9 +67,7 @@ class _PesornalAccountState extends State<PesornalAccount> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      // builder: (context) => const WelcomePage(welcomeModel: []),
-                      builder: (context) =>
-                          const EventsScreen(eventsUpcoming: []),
+                      builder: (context) => const WelcomePage(),
                     ),
                   );
                 },

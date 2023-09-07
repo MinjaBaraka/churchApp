@@ -25,55 +25,77 @@ class _EventsScreenState extends State<EventsScreen>
     return SafeArea(
       child: Scaffold(
         drawer: const DrawerListPages(),
-        appBar: AppBar(
-          backgroundColor: Colors.orangeAccent,
-          toolbarHeight: 100,
-          elevation: 0.0,
-          title: const Text(
-            "Events",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 25,
-            ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.search,
-                color: Colors.black,
-                size: 30,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          child: Column(
+            children: [
+              Container(
+                height: 60,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      blurRadius: 0.2,
+                      spreadRadius: 0.2,
+                    ),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    Builder(
+                      builder: (context) => IconButton(
+                          onPressed: () {
+                            Scaffold.of(context).openDrawer();
+                          },
+                          icon: const Icon(
+                            Icons.dashboard_customize,
+                            color: Colors.orangeAccent,
+                          )),
+                    ),
+                    const Gap(10),
+                    const Text(
+                      "Events",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Spacer(),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.search,
+                        size: 30,
+                        color: Colors.orangeAccent,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
-        ),
-        body: Column(
-          children: [
-            const Gap(10),
-            TabBar(
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorColor: Colors.orangeAccent,
-              labelColor: Colors.black,
-              unselectedLabelColor: Colors.grey,
-              labelStyle:
-                  const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              controller: tabController,
-              indicator:
-                  CircleTabIndicator(color: Colors.orangeAccent, radius: 5),
-              tabs: const [
-                Tab(
-                  text: "Upcoming",
-                ),
-                Tab(
-                  text: "Past",
-                ),
-              ],
-            ),
-            const Gap(10),
-            Expanded(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+              const Gap(10),
+              TabBar(
+                indicatorSize: TabBarIndicatorSize.label,
+                indicatorColor: Colors.orangeAccent,
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey,
+                labelStyle:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                controller: tabController,
+                indicator:
+                    CircleTabIndicator(color: Colors.orangeAccent, radius: 5),
+                tabs: const [
+                  Tab(
+                    text: "Upcoming",
+                  ),
+                  Tab(
+                    text: "Past",
+                  ),
+                ],
+              ),
+              const Gap(10),
+              Expanded(
                 child: TabBarView(
                   physics: const NeverScrollableScrollPhysics(),
                   controller: tabController,
@@ -117,7 +139,7 @@ class _EventsScreenState extends State<EventsScreen>
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      const Gap(25),
+                                      const Gap(20),
                                       const Icon(
                                         Icons.timer_outlined,
                                         color: Colors.orangeAccent,
@@ -131,18 +153,20 @@ class _EventsScreenState extends State<EventsScreen>
                                           fontWeight: FontWeight.bold,
                                         ),
                                       ),
-                                      const Gap(25),
+                                      const Gap(20),
                                       const Icon(
                                         Icons.person,
                                         color: Colors.orangeAccent,
                                       ),
                                       const Gap(5),
-                                      Text(
-                                        EventsUpcoming
-                                            .upcomingEvents[index].agedEvents,
-                                        style: const TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold,
+                                      Expanded(
+                                        child: Text(
+                                          EventsUpcoming
+                                              .upcomingEvents[index].agedEvents,
+                                          style: const TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.bold,
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -199,8 +223,8 @@ class _EventsScreenState extends State<EventsScreen>
                   ],
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

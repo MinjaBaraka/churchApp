@@ -8,11 +8,18 @@ import '../model/blogs_list.dart';
 import '../pages/blogs_page.dart';
 import 'drawer_terms_diver.dart';
 
-class DrawerListPages extends StatelessWidget {
+class DrawerListPages extends StatefulWidget {
   const DrawerListPages({
     super.key,
   });
 
+  @override
+  State<DrawerListPages> createState() => _DrawerListPagesState();
+}
+
+class _DrawerListPagesState extends State<DrawerListPages> {
+  bool iseSelected = true;
+  Color inActiveColor = Colors.black;
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -64,10 +71,13 @@ class DrawerListPages extends StatelessWidget {
               colorText: Colors.orangeAccent,
               icon: Icons.home,
               onTap: () {
+                setState(() {
+                  iseSelected == !iseSelected;
+                });
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const WelcomePage(welcomeModel: []),
+                      builder: (context) => const WelcomePage(),
                     ));
               },
             ),
