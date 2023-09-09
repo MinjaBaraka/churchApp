@@ -4,8 +4,8 @@ import 'package:church/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../model/blogs_list.dart';
 import '../pages/blogs_page.dart';
+import '../pages/prayer_screen.dart';
 import 'drawer_terms_diver.dart';
 
 class DrawerListPages extends StatefulWidget {
@@ -102,7 +102,13 @@ class _DrawerListPagesState extends State<DrawerListPages> {
             DrawerListTerms(
               drawerText: "Prayer",
               icon: Icons.hail_outlined,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PrayerScreen(),
+                    ));
+              },
             ),
             const Gap(8),
             const ContainerDividerWithPadding(),
@@ -122,8 +128,7 @@ class _DrawerListPagesState extends State<DrawerListPages> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        BlogsPage(blogsList: BlogsList.blogsList),
+                    builder: (context) => const BlogsPage(),
                   ),
                 );
               },

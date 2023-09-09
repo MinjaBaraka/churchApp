@@ -46,13 +46,15 @@ class _EventsScreenState extends State<EventsScreen>
                   children: [
                     Builder(
                       builder: (context) => IconButton(
-                          onPressed: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          icon: const Icon(
-                            Icons.dashboard_customize,
-                            color: Colors.orangeAccent,
-                          )),
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                        icon: const Icon(
+                          Icons.dashboard_customize,
+                          color: Colors.orangeAccent,
+                          size: 35,
+                        ),
+                      ),
                     ),
                     const Gap(10),
                     const Text(
@@ -63,12 +65,35 @@ class _EventsScreenState extends State<EventsScreen>
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.search,
-                        size: 30,
-                        color: Colors.orangeAccent,
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          const Gap(30),
+                          const Expanded(
+                            child: TextField(
+                              cursorColor: Colors.orangeAccent,
+                              decoration: InputDecoration(
+                                hintText: "Search",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.search,
+                              color: Colors.orangeAccent,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],

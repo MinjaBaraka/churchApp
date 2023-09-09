@@ -7,6 +7,7 @@ import 'package:gap/gap.dart';
 import '../model/blogs_list.dart';
 import '../model/upcoming_events.dart';
 import '../widget/welcome_grid_widget.dart';
+import 'prayer_screen.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -54,7 +55,7 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ],
               ),
-              const Gap(50),
+              const Gap(30),
               Column(
                 children: [
                   Row(
@@ -78,14 +79,15 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                   const Gap(20),
                   const Text(
-                    "At the end of the day,Before close your eyes,be content with what you've done and be proudof who you are",
+                    "At the end of the day,Before close your eyes,be content with what you've done and be proud of who you are",
+                    textAlign: TextAlign.justify,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
               ),
-              const Gap(40),
+              const Gap(30),
               Column(
                 children: [
                   GridView.count(
@@ -113,18 +115,24 @@ class _WelcomePageState extends State<WelcomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const BlogsPage(blogsList: []),
+                                builder: (context) => const BlogsPage(),
                               ));
                         },
                         icon: Icons.list_alt,
                         lgName: "Blogs\n",
                         smName: "List of Blogs",
                       ),
-                      const WelcomeGridListWidget(
+                      WelcomeGridListWidget(
                         icon: Icons.hail_outlined,
                         lgName: "Prayer\n",
                         smName: "List of Event",
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const PrayerScreen(),
+                              ));
+                        },
                       ),
                       const WelcomeGridListWidget(
                         icon: Icons.book_outlined,

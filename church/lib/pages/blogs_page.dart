@@ -4,8 +4,10 @@ import 'package:gap/gap.dart';
 import '../widget/drawer_list_page.dart';
 
 class BlogsPage extends StatelessWidget {
-  final List<BlogsList> blogsList;
-  const BlogsPage({Key? key, required this.blogsList}) : super(key: key);
+  const BlogsPage({super.key});
+
+  // final List<BlogsList> blogsList;
+  // const BlogsPage({Key? key, required this.blogsList}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,13 +35,15 @@ class BlogsPage extends StatelessWidget {
                   children: [
                     Builder(
                       builder: (context) => IconButton(
-                          onPressed: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          icon: const Icon(
-                            Icons.dashboard_customize,
-                            color: Colors.orangeAccent,
-                          )),
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                        icon: const Icon(
+                          Icons.dashboard_customize,
+                          color: Colors.orangeAccent,
+                          size: 35,
+                        ),
+                      ),
                     ),
                     const Gap(10),
                     const Text(
@@ -50,12 +54,35 @@ class BlogsPage extends StatelessWidget {
                       ),
                     ),
                     const Spacer(),
-                    IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.search,
-                        size: 30,
-                        color: Colors.orangeAccent,
+                    Container(
+                      width: 200,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade300,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        children: [
+                          const Gap(30),
+                          const Expanded(
+                            child: TextField(
+                              cursorColor: Colors.orangeAccent,
+                              decoration: InputDecoration(
+                                hintText: "Search",
+                                hintStyle: TextStyle(
+                                  color: Colors.grey,
+                                ),
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(
+                              Icons.search,
+                              color: Colors.orangeAccent,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -68,7 +95,14 @@ class BlogsPage extends StatelessWidget {
                   itemCount: BlogsList.blogsList.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: BlogsList.blogsList[index].onTap,
+                      // onTap: () {
+                      //   Navigator.push(
+                      //       context,
+                      //       MaterialPageRoute(
+                      //         builder: (context) => BlogsList.blogsList[index],
+                      //       ));
+                      // },
+                      // onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsList.blogsList[index],)),
                       splashColor: Colors.orangeAccent,
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 10),
