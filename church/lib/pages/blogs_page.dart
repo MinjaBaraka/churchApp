@@ -2,6 +2,7 @@ import 'package:church/model/blogs_list.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../widget/drawer_list_page.dart';
+import 'blogs_detail.dart';
 
 class BlogsPage extends StatelessWidget {
   const BlogsPage({super.key});
@@ -19,7 +20,7 @@ class BlogsPage extends StatelessWidget {
           child: Column(
             children: [
               Container(
-                height: 60,
+                height: MediaQuery.of(context).size.height * 0.07,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -55,7 +56,7 @@ class BlogsPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     Container(
-                      width: 200,
+                      width: MediaQuery.of(context).size.width * 0.45,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(10),
@@ -95,19 +96,19 @@ class BlogsPage extends StatelessWidget {
                   itemCount: BlogsList.blogsList.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      // onTap: () {
-                      //   Navigator.push(
-                      //       context,
-                      //       MaterialPageRoute(
-                      //         builder: (context) => BlogsList.blogsList[index],
-                      //       ));
-                      // },
-                      // onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => BlogsList.blogsList[index],)),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlogsDetail(index: index),
+                          ),
+                        );
+                      },
                       splashColor: Colors.orangeAccent,
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Container(
-                          height: 200,
+                          height: MediaQuery.of(context).size.height * 0.24,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -135,12 +136,11 @@ class BlogsPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              // const Gap(30),
                               Expanded(
                                 child: Container(
                                   margin:
                                       const EdgeInsets.symmetric(vertical: 10),
-                                  width: 230,
+                                  width: MediaQuery.of(context).size.width,
                                   child: Column(
                                     children: [
                                       Padding(

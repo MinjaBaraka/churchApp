@@ -30,7 +30,7 @@ class _EventsScreenState extends State<EventsScreen>
           child: Column(
             children: [
               Container(
-                height: 60,
+                height: MediaQuery.of(context).size.height * 0.07,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
@@ -66,7 +66,7 @@ class _EventsScreenState extends State<EventsScreen>
                     ),
                     const Spacer(),
                     Container(
-                      width: 200,
+                      width: MediaQuery.of(context).size.width * 0.45,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(10),

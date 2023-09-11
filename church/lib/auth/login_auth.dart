@@ -39,8 +39,8 @@ class _LoginAuthState extends State<LoginAuth> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 4,
-                            width: 40,
+                            height: MediaQuery.of(context).size.height * 0.004,
+                            width: MediaQuery.of(context).size.width * 0.10,
                             decoration: const BoxDecoration(
                               color: Colors.orangeAccent,
                             ),
@@ -56,8 +56,8 @@ class _LoginAuthState extends State<LoginAuth> {
                           ),
                           const Spacer(),
                           Container(
-                            height: 4,
-                            width: 40,
+                            height: MediaQuery.of(context).size.height * 0.004,
+                            width: MediaQuery.of(context).size.width * 0.10,
                             decoration: const BoxDecoration(
                               color: Colors.orangeAccent,
                             ),
@@ -81,6 +81,7 @@ class _LoginAuthState extends State<LoginAuth> {
                     ),
                   ),
                   const Gap(10),
+                  // Use the Stack Widget to position many widget
                   Stack(
                     children: [
                       TextFormField(
@@ -116,6 +117,7 @@ class _LoginAuthState extends State<LoginAuth> {
                       )
                     ],
                   ),
+                  // End of Stack Widget
                   const Gap(10),
                   ElevatedButton(
                     onPressed: () {

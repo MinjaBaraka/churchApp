@@ -9,10 +9,11 @@ class ContainerDividerWithPadding extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: DividerContainer(
-        height: 2,
+        // height: 2,
+        height: MediaQuery.of(context).size.height * 0.003,
         color: Colors.orangeAccent,
         width: double.infinity,
       ),

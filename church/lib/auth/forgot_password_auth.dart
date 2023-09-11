@@ -34,39 +34,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               key: formKey,
               child: Column(
                 children: [
-                  // Column(
-                  //   children: [
-                  //     Row(
-                  //       mainAxisAlignment: MainAxisAlignment.center,
-                  //       children: [
-                  //         Container(
-                  //           height: 4,
-                  //           width: 40,
-                  //           decoration: const BoxDecoration(
-                  //             color: Colors.orangeAccent,
-                  //           ),
-                  //         ),
-                  //         const Spacer(),
-                  //         const Text(
-                  //           "Arusha Church",
-                  //           textAlign: TextAlign.center,
-                  //           style: TextStyle(
-                  //             fontSize: 30,
-                  //             fontWeight: FontWeight.bold,
-                  //           ),
-                  //         ),
-                  //         const Spacer(),
-                  //         Container(
-                  //           height: 4,
-                  //           width: 40,
-                  //           decoration: const BoxDecoration(
-                  //             color: Colors.orangeAccent,
-                  //           ),
-                  //         ),
-                  //       ],
-                  //     )
-                  //   ],
-                  // ),
                   Center(
                     child: Column(
                       children: [

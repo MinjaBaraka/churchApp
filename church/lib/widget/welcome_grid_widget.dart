@@ -19,8 +19,8 @@ class WelcomeGridListWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 100,
-        width: 185,
+        height: MediaQuery.of(context).size.height * 1.00,
+        width: MediaQuery.of(context).size.width * 1.85,
         decoration: BoxDecoration(
           gradient: const LinearGradient(
             begin: Alignment.topRight,

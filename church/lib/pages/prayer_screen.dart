@@ -62,7 +62,7 @@ class _PrayerScreenState extends State<PrayerScreen> {
                     ),
                     const Spacer(),
                     Container(
-                      width: 200,
+                      width: MediaQuery.of(context).size.width * 0.45,
                       decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(10),
