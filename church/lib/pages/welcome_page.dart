@@ -102,8 +102,7 @@ class _WelcomePageState extends State<WelcomePage> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) =>
-                                    const EventsScreen(eventsUpcoming: []),
+                                builder: (context) => const EventsScreen(),
                               ));
                         },
                         icon: Icons.event,

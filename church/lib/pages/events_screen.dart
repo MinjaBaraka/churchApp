@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -9,9 +7,9 @@ import '../widget/drawer_list_page.dart';
 import '../widget/tab_indicator_with_painter.dart';
 
 class EventsScreen extends StatefulWidget {
-  final List<EventsUpcoming> eventsUpcoming;
-  const EventsScreen({Key? key, required this.eventsUpcoming})
-      : super(key: key);
+  const EventsScreen({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<EventsScreen> createState() => _EventsScreenState();
@@ -130,9 +128,9 @@ class _EventsScreenState extends State<EventsScreen>
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context, index) {
                         return Padding(
-                          padding: const EdgeInsets.only(bottom: 10),
+                          padding: const EdgeInsets.only(bottom: 12),
                           child: Container(
-                            height: 200,
+                            height: MediaQuery.of(context).size.height * 0.26,
                             decoration: BoxDecoration(
                               color: Colors.grey.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(10),
@@ -197,9 +195,10 @@ class _EventsScreenState extends State<EventsScreen>
                                     ],
                                   ),
                                   const Gap(10),
-                                  const DividerContainer(
+                                  DividerContainer(
                                     color: Colors.orangeAccent,
-                                    height: 3.5,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.004,
                                   ),
                                   const Gap(20),
                                   Row(
@@ -232,10 +231,12 @@ class _EventsScreenState extends State<EventsScreen>
                                     ],
                                   ),
                                   const Gap(8),
-                                  Text(
-                                    EventsUpcoming.upcomingEvents[index]
-                                        .paragraphInfoEvents,
-                                    textAlign: TextAlign.justify,
+                                  Expanded(
+                                    child: Text(
+                                      EventsUpcoming.upcomingEvents[index]
+                                          .paragraphInfoEvents,
+                                      textAlign: TextAlign.justify,
+                                    ),
                                   )
                                 ],
                               ),

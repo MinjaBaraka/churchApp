@@ -162,7 +162,7 @@ class _LoginAuthState extends State<LoginAuth> {
                         ),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),

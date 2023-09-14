@@ -1,4 +1,3 @@
-import 'package:church/model/upcoming_events.dart';
 import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/welcome_page.dart';
 import 'package:flutter/material.dart';
@@ -91,8 +90,7 @@ class _DrawerListPagesState extends State<DrawerListPages> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const EventsScreen(
-                          eventsUpcoming: EventsUpcoming.upcomingEvents),
+                      builder: (context) => const EventsScreen(),
                     ));
               },
             ),

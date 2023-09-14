@@ -43,27 +43,27 @@ class WelcomeGridListWidget extends StatelessWidget {
                     icon,
                     color: Colors.orangeAccent,
                   ),
-                  const Gap(20),
+                  const Gap(10),
                   Expanded(
                     child: Column(
                       children: [
                         RichText(
-// textAlign: TextAlign.center,
+                          textAlign: TextAlign.left,
                           text: TextSpan(
                             children: [
                               TextSpan(
                                 text: lgName,
                                 style: const TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20,
+                                  fontSize: 18,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                               TextSpan(
                                 text: smName,
-// style: TextStyle(
-// overflow: TextOverflow.clip,
-// ),
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                ),
                               ),
                             ],
                           ),

@@ -38,8 +38,8 @@ class _RegisterAuthState extends State<RegisterAuth> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            height: 4,
-                            width: 40,
+                            height: MediaQuery.of(context).size.height * 0.004,
+                            width: MediaQuery.of(context).size.width * 0.10,
                             decoration: const BoxDecoration(
                               color: Colors.orangeAccent,
                             ),
@@ -55,8 +55,8 @@ class _RegisterAuthState extends State<RegisterAuth> {
                           ),
                           const Spacer(),
                           Container(
-                            height: 4,
-                            width: 40,
+                            height: MediaQuery.of(context).size.height * 0.004,
+                            width: MediaQuery.of(context).size.width * 0.10,
                             decoration: const BoxDecoration(
                               color: Colors.orangeAccent,
                             ),

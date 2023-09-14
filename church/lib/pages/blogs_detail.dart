@@ -63,7 +63,7 @@ class _BlogsDetailState extends State<BlogsDetail> {
               //Container + Image + word
 
               Container(
-                height: 200,
+                height: MediaQuery.of(context).size.height * 0.25,
                 decoration: BoxDecoration(
                   color: Colors.grey.withOpacity(0.1),
                   image: DecorationImage(
@@ -80,16 +80,30 @@ class _BlogsDetailState extends State<BlogsDetail> {
                   ],
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 100, left: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
                       Expanded(
-                        child: Text(
-                          blogsList.lgText,
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 23.5,
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 120),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            color: Colors.orangeAccent,
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.orangeAccent.withOpacity(0.6),
+                                blurRadius: 0.2,
+                                spreadRadius: 0.2,
+                              ),
+                            ],
+                          ),
+                          child: Text(
+                            blogsList.lgText,
+                            textAlign: TextAlign.left,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 22,
+                            ),
                           ),
                         ),
                       ),
@@ -100,20 +114,17 @@ class _BlogsDetailState extends State<BlogsDetail> {
 
               //End Container + Image + word
 
-              const Gap(20),
+              const Gap(15),
 
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.1),
-                    borderRadius: const BorderRadius.only(
-                      topLeft: Radius.circular(16),
-                      topRight: Radius.circular(16),
-                    ),
+                    // color: Colors.grey.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.grey.withOpacity(0.1),
                         blurRadius: 0.2,
                         spreadRadius: 0.2,
                       ),
@@ -131,20 +142,32 @@ class _BlogsDetailState extends State<BlogsDetail> {
                               blogsList.smText,
                               style: const TextStyle(
                                 color: Colors.orangeAccent,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             Text(
                               blogsList.calendarText,
                               style: const TextStyle(
                                 color: Colors.orangeAccent,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                           ],
                         ),
-                        const Gap(20),
-                        Text(
-                          blogsList.paragraphInfoBlogs,
-                          textAlign: TextAlign.justify,
+                        const Gap(16),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * 0.44,
+                          child: ListView(
+                            children: [
+                              Text(
+                                blogsList.paragraphInfoBlogs,
+                                textAlign: TextAlign.justify,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),

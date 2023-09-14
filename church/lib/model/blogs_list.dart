@@ -19,7 +19,6 @@ class BlogsList extends Equatable {
 
   static List<BlogsList> blogsList = [
     const BlogsList(
-      // onTap: () {},
       smText: "Arusha church",
       calendarText: "Sept 20, 2023",
       lgText: "Drawing Near To God Through Sanctification",
@@ -28,7 +27,6 @@ class BlogsList extends Equatable {
           "If your application needs to display some contents, it's quite common to separate the contents into multiple tabs.",
     ),
     const BlogsList(
-      // onTap: () {},
       smText: "Arusha church",
       calendarText: "Jan 30, 2024",
       lgText: "Men, God's Control, and Self-Control",
@@ -37,7 +35,6 @@ class BlogsList extends Equatable {
           "In Flutter, creating such a layout can be done easily thanks to TabBar and TabBarView widgets.",
     ),
     const BlogsList(
-      // onTap: () {},
       smText: "Arusha church",
       calendarText: "Feb 16, 2024",
       lgText: "12 Spurgeon Quotes on Fear and Faith",
@@ -46,7 +43,6 @@ class BlogsList extends Equatable {
           "If your application needs to display some contents, it's quite common to separate the contents into multiple tabs.",
     ),
     const BlogsList(
-      // onTap: () {},
       smText: "Arusha church",
       calendarText: "March 05, 2024",
       lgText: "Drawing Near To God Through Sanctification",

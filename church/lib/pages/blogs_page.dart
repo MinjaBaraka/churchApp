@@ -108,7 +108,7 @@ class BlogsPage extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Container(
-                          height: MediaQuery.of(context).size.height * 0.24,
+                          height: MediaQuery.of(context).size.height * 0.25,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
@@ -120,87 +120,100 @@ class BlogsPage extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Row(
+                          child: Stack(
                             children: [
-                              Container(
-                                margin:
-                                    const EdgeInsets.only(right: 15, left: 5),
-                                height: 160,
-                                width: 135,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(16),
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        BlogsList.blogsList[index].imageBlog),
-                                    fit: BoxFit.cover,
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Container(
-                                  margin:
-                                      const EdgeInsets.symmetric(vertical: 10),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Column(
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 10, horizontal: 5),
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Text(
-                                              BlogsList.blogsList[index].smText,
-                                              style: const TextStyle(
-                                                  fontSize: 10,
-                                                  color: Colors.grey,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                            Text(
-                                              BlogsList.blogsList[index]
-                                                  .calendarText,
-                                              style: const TextStyle(
-                                                  fontSize: 10,
-                                                  color: Colors.grey,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
+                              Row(
+                                children: [
+                                  Container(
+                                    margin: const EdgeInsets.only(
+                                        right: 15, left: 5),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.20,
+                                    width: MediaQuery.of(context).size.width *
+                                        0.30,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(16),
+                                      image: DecorationImage(
+                                        image: AssetImage(BlogsList
+                                            .blogsList[index].imageBlog),
+                                        fit: BoxFit.cover,
                                       ),
-                                      Row(
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Container(
+                                      margin: const EdgeInsets.symmetric(
+                                          vertical: 10),
+                                      width: MediaQuery.of(context).size.width,
+                                      child: Column(
                                         children: [
-                                          Expanded(
-                                            child: Text(
-                                              BlogsList.blogsList[index].lgText,
-                                              style: const TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18,
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                vertical: 10, horizontal: 5),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  BlogsList
+                                                      .blogsList[index].smText,
+                                                  style: const TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.grey,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                Text(
+                                                  BlogsList.blogsList[index]
+                                                      .calendarText,
+                                                  style: const TextStyle(
+                                                      fontSize: 10,
+                                                      color: Colors.grey,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Row(
+                                            children: [
+                                              Expanded(
+                                                child: Text(
+                                                  BlogsList
+                                                      .blogsList[index].lgText,
+                                                  style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 18,
+                                                  ),
+                                                ),
                                               ),
+                                            ],
+                                          ),
+                                          const Gap(10),
+                                          Padding(
+                                            padding: const EdgeInsets.symmetric(
+                                                horizontal: 5),
+                                            child: Row(
+                                              children: [
+                                                Expanded(
+                                                  child: Text(
+                                                    BlogsList.blogsList[index]
+                                                        .paragraphInfoBlogs,
+                                                    textAlign:
+                                                        TextAlign.justify,
+                                                    softWrap: true,
+                                                  ),
+                                                ),
+                                              ],
                                             ),
                                           ),
                                         ],
                                       ),
-                                      const Gap(10),
-                                      Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 5),
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              child: Text(
-                                                BlogsList.blogsList[index]
-                                                    .paragraphInfoBlogs,
-                                                textAlign: TextAlign.justify,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              )
+                                ],
+                              ),
                             ],
                           ),
                         ),
