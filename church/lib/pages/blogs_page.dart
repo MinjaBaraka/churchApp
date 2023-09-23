@@ -40,17 +40,17 @@ class BlogsPage extends StatelessWidget {
                           Scaffold.of(context).openDrawer();
                         },
                         icon: const Icon(
-                          Icons.dashboard_customize,
+                          Icons.sort,
                           color: Colors.orangeAccent,
-                          size: 35,
+                          size: 32,
                         ),
                       ),
                     ),
-                    const Gap(10),
+                    const Gap(15),
                     const Text(
                       "Blogs",
                       style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 28,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
