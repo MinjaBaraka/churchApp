@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../pages/blogs_page.dart';
+import '../pages/books.detail.dart';
 import '../pages/prayer_screen.dart';
 import 'drawer_terms_diver.dart';
 
@@ -137,7 +138,14 @@ class _DrawerListPagesState extends State<DrawerListPages> {
             DrawerListTerms(
               drawerText: "Books",
               icon: Icons.book_outlined,
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const BookLibray(),
+                  ),
+                );
+              },
             ),
             const Gap(8),
             const ContainerDividerWithPadding(),
