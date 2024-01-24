@@ -1,4 +1,5 @@
 import 'package:church/pages/blogs_page.dart';
+import 'package:church/pages/books.detail.dart';
 import 'package:church/pages/events_screen.dart';
 import 'package:church/pages/personal_account.dart';
 import 'package:flutter/material.dart';
@@ -133,10 +134,17 @@ class _WelcomePageState extends State<WelcomePage> {
                               ));
                         },
                       ),
-                      const WelcomeGridListWidget(
+                       WelcomeGridListWidget(
                         icon: Icons.book_outlined,
                         lgName: "Books\n",
                         smName: "List of Books",
+                        onTap: () {
+                           Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const BookLibray(),
+                              ));
+                        },
                       ),
                       const WelcomeGridListWidget(
                         icon: Icons.collections,

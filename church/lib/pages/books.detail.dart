@@ -86,44 +86,53 @@ class BookLibray extends StatelessWidget {
                 ),
               ),
               const Gap(20),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.32,
-                width: MediaQuery.of(context).size.width * 0.42,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.all(10),
-                      height: MediaQuery.of(context).size.height * 0.22,
-                      width: MediaQuery.of(context).size.width * 0.38,
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                            image: AssetImage('assets/blogs/3.jpg'),
-                            fit: BoxFit.cover),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
+              Row(
+                children: [
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.32,
+                    width: MediaQuery.of(context).size.width * 0.42,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    const Gap(4),
-                    const Text(
-                      "The Story of The Bible",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          height: MediaQuery.of(context).size.height * 0.22,
+                          width: MediaQuery.of(context).size.width * 0.38,
+                          decoration: BoxDecoration(
+                            image: const DecorationImage(
+                                image: AssetImage('assets/blogs/3.jpg'),
+                                fit: BoxFit.cover),
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                        ),
+                        const Gap(4),
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "The Story of The Bible",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Gap(10),
+                            Text(
+                              "Baraka G Minja",
+                              style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    const Gap(10),
-                    const Text(
-                      "Baraka G Minja",
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               )
             ],
           ),
